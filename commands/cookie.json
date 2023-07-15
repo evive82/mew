@@ -1,0 +1,47 @@
+{
+    "actions": [
+        "gives ",
+        "gets ",
+        "makes ",
+        "buys "
+    ],
+    "descripts": [
+        "yummy ",
+        "scrumptious ",
+        "delicious ",
+        "delectable ",
+        "toothsome ",
+        "tasty "
+    ],
+    "sizes": [
+        "small ",
+        "medium-sized ",
+        "large ",
+        "little ",
+        "gigantic "
+    ],
+    "cookies": [
+        "sugar cookie ",
+        "macadamia nut cookie ",
+        "oatmeal cranberry cookie ",
+        "oatmeal raisin cookie ",
+        "chocolate oatmeal fudge cookie ",
+        "oreo cookie ",
+        "peanut butter cookie ",
+        "chocolate fudge cookie ",
+        "jam thumbprint cookie ",
+        "pumpkin cookie ",
+        "lemon bar cookie ",
+        "chocolate cookie ",
+        "Mexican wedding cookie ",
+        "Danish sugar cookie ",
+        "biscotti cookie ",
+        "triple chocolate cookie ",
+        "toffee peanut cookie "
+    ],
+    "sides": [
+        "bowl of chocolate sauce",
+        "glass of milk",
+        "bowl of ice cream"
+    ]
+}
