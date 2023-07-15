@@ -44,24 +44,13 @@ module.exports = class Discord {
         if (message.author.bot) 
             return;
 
-        // Can use message.author.username if member.displayName has issues
         const messageData = {
             id: message.id,
             channel: message.channelId,
             guild: message.guildId,
             user: message.member.displayName,
-            content: message.content
+            content: this.stripQuotes(message.content)
         };
-
-        // Don't want to respond to stuff that may be in quotes.
-        if (message.content.startsWith('> ')) {
-            messageData.content = this.stripQuotes(message.content);
-        }
-
-        if (messageData.content.includes(this.config.botID) ||
-            message.type == 'REPLY' && message.mentions.repliedUser.id == this.config.botID) {
-            this.sendToCleverbot(messageData);
-        }
 
         if (messageData.content.startsWith(this.prefix)) {
             const message = messageData.content.substring(this.prefix.length);
@@ -69,6 +58,10 @@ module.exports = class Discord {
             if (!response) return;
 
             this.sendMessage(response, messageData);
+        }
+        else if (messageData.content.includes(this.config.botID) ||
+            message.type == 'REPLY' && message.mentions.repliedUser.id == this.config.botID) {
+            this.sendToCleverbot(messageData);
         }
     }
 
@@ -93,7 +86,6 @@ module.exports = class Discord {
         catch {
             console.error(error);
         }
-
     }
 
     sendMessage(message, messageData) {
