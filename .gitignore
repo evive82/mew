@@ -1,4 +1,4 @@
 .env
 *.log
 node_modules
-
+mew-bot.service

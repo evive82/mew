@@ -33,7 +33,7 @@ module.exports = class CommandHandler {
     }
 
     /** 
-     * Convert common common command abbreviations to the full commands.
+     * Convert common common abbreviations to the full commands.
      * Need to find something better.
      */
     checkForAlias(command) {
