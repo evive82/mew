@@ -8,7 +8,7 @@
     "ansi-styles": "^6.2.1",
     "asap": "^2.0.6",
     "asynckit": "^0.4.0",
-    "axios": "^0.26.1",
+    "axios": "^1.7.9",
     "balanced-match": "^1.0.2",
     "brace-expansion": "^2.0.1",
     "call-bind": "^1.0.2",
@@ -91,7 +91,6 @@
     "ws": "^8.13.0",
     "yallist": "^4.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
