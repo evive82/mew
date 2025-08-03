@@ -2,24 +2,24 @@ const axios = require('axios');
 
 module.exports = async (query) => {
     try {
-        const key = process.env.BING_MAPS_KEY;
-        const url = `http://dev.virtualearth.net/REST/v1/Locations?` +
-                    `query=${query}` +
-                    `&maxResults=1` +
-                    `&key=${key}`;
+        const key = process.env.AZURE_MAPS_KEY;
+        const url = `https://atlas.microsoft.com/geocode?api-version=2023-06-01` +
+                    `&query=${query}` +
+                    `&subscription-key=${key}`;
 
         const response = await axios.get(url);
-        const result = response.data.resourceSets[0].resources[0];
+        const result = response.data.features[0].properties;
         if (response.status !== 200 || !result) return false;
     
+        const adminDistricts = result.address.adminDistricts;
         const locationData = {
             formattedAddr: result.address.formattedAddress,
             city: result.address.locality,
-            state: result.address.adminDistrict,
-            county: result.address.adminDistrict2,
-            country: result.address.countryRegion,
-            latitude: result.point.coordinates[0],
-            longitude: result.point.coordinates[1]
+            state: (adminDistricts) ? adminDistricts[0].shortName : null,
+            county: (adminDistricts) ? adminDistricts[1].shortName : null,
+            country: result.address.countryRegion.name,
+            latitude: result.geocodePoints[0].geometry.coordinates[1],
+            longitude: result.geocodePoints[0].geometry.coordinates[0]
         }
     
         // formattedAddr will show zip code instead of city if used as query
