@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = async (query) => {
     try {
         const key = process.env.AZURE_MAPS_KEY;
-        const url = `https://atlas.microsoft.com/geocode?api-version=2023-06-01` +
+        const url = `https://atlas.microsoft.com/geocode?api-version=2025-01-01` +
                     `&query=${query}` +
                     `&subscription-key=${key}`;
 
