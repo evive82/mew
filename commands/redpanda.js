@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports.run = async (source, _args) => {
     try {
-        const panda = 'https://some-random-api.ml/img/red_panda';
+        const panda = 'https://some-random-api.com/img/red_panda';
         const response = await axios(panda);
 
         if (!response.data.link)

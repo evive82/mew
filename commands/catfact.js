@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports.run = async (_source, _args) => {
     try {
-        const cats = 'https://catfact.ninja/fact';
+        const cats = 'https://some-random-api.com/facts/cat';
         const response = await axios(cats);
 
         if (!response.data.fact)
