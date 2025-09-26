@@ -23,6 +23,7 @@ module.exports = class Cleverbot {
         catch {
             console.error(error);
             return "Error getting Cleverbot response.";
+            return "";
         }
     }
 }

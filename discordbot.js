@@ -58,11 +58,11 @@ module.exports = class Discord {
             if (!response) return;
 
             this.sendMessage(response, messageData);
-        }/*
+        }
         else if (messageData.content.includes(this.config.botID) ||
             message.type == 'REPLY' && message.mentions.repliedUser.id == this.config.botID) {
             this.sendToCleverbot(messageData);
-        }*/
+        }
     }
 
     stripQuotes(message) {
@@ -77,7 +77,7 @@ module.exports = class Discord {
 
         return stripped.join('\n');
     }
-    /*
+    
     async sendToCleverbot(messageData) {
         try {
             const response = await this.cleverbot.speak(messageData.content);
@@ -88,7 +88,7 @@ module.exports = class Discord {
             this.sendMessage("Can't get Cleverbot response", messageData);
         }
     }
-    */
+    
     sendMessage(message, messageData) {
         try {
             const channel = this.client.channels.cache.get(messageData.channel);
